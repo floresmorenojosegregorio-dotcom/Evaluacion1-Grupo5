@@ -1,1 +1,1 @@
-Edixon Castro estudiante V-31210293
+Edixon Castro V-31210293
