@@ -20,3 +20,7 @@ cout << " 1. Edixon Castro        -  V-31210293\n"
          << " 2. Jorge Andrade        -  V-31174882\n"
          << " 3. Bryan Nieves         -  V-32589282\n"
          << " 4. Felix Perez          -  V-31583083\n";
+cout << " 5. Jose Flores          -  V-31381418\n"
+         << " 6. Xander Losada        -  V-31842240\n"
+         << " 7. Williamsnis Acosta   -  V-31797435\n"
+         << " 8. Cesar Castrillo      -  V-31970219\n";
