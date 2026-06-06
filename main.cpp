@@ -13,3 +13,6 @@ string nombreUsuario;
     cout << "\nPor favor, ingrese su nombre para continuar: ";
     getline(cin, nombreUsuario);
 
+cout << "\n¡Bienvenido/a, " << nombreUsuario << "!\n\n"
+         << "Listado de integrantes del Grupo 5 que participaron:\n"
+         << "----------------------------------------------------\n";
