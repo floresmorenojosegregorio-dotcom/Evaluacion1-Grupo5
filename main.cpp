@@ -24,3 +24,10 @@ cout << " 5. Jose Flores          -  V-31381418\n"
          << " 6. Xander Losada        -  V-31842240\n"
          << " 7. Williamsnis Acosta   -  V-31797435\n"
          << " 8. Cesar Castrillo      -  V-31970219\n";
+cout << " 9. Santiago Noguera     -  V-31541024\n"
+         << "10. Johanfer Mendoza     -  V-32429275\n"
+         << "11. Yorman Mendoza       -  V-31540613\n"
+         << "----------------------------------------------------\n";
+
+    return 0;
+}
