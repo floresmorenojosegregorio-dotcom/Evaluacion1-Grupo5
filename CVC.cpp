@@ -12,4 +12,9 @@
 ‎#include <cpr/cpr.h> 
 ‎#undef max 
 ‎//Retiramos la definicion de max que incluye cpr junto a un archivo de cabecera, ya que ocasiona conflictos con la funcion estatica max() perteneciente a numeric_limits
-‎
+‎‎
+// Estructura para almacenar las tasas de cambio referenciadas a 1 USD
+‎struct TasasCambio {
+‎    double usdToLocal;
+‎    double usdToCrypto;
+‎};
