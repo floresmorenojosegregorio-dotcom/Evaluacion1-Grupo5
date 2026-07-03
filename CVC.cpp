@@ -116,3 +116,5 @@
 ‎    std::cout << "Seleccione una opcion (1-7): ";
 ‎}
 ‎
+int main() {
+‎    TasasCambio tasas = { 0.0, 0.0 };
