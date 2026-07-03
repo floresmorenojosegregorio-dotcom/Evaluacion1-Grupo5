@@ -34,4 +34,20 @@
 ‎    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 ‎    std::cin.get(); // Espera la pulsación de la tecla
 ‎}
+
+‎// Funciones de validación y entrada de datos
+‎double solicitarDouble(const std::string& mensaje) {
+‎    double valor = 0.0;
+‎    while (true) {
+‎        std::cout << mensaje;
+‎        if (std::cin >> valor && valor > 0) {
+‎            return valor;
+‎        }
+‎        else {
+‎            std::cout << "[!] ERROR!! Por favor, introzca un valor numerico mayor a cero.\n";
+‎            std::cin.clear();
+‎            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+‎        }
+‎    }
+‎}
 ‎
