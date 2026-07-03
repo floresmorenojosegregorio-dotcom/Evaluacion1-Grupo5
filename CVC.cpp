@@ -50,4 +50,53 @@
 ‎        }
 ‎    }
 ‎}
+
+‎// Función para realizar las conversiones lógicas
+‎void procesarConversion(int opcion, const TasasCambio& tasas, const std::string& MonedaLocal, const std::string& Crypto) {
+‎    double monto = 0.0;
+‎    double resultado = 0.0;
+‎
+‎    switch (opcion) {
+‎    case 1: // Bolivares a USD
+‎        monto = solicitarDouble("Introduce el monto en " + MonedaLocal + ": ");
+‎        resultado = monto / tasas.usdToLocal;
+‎        std::cout << std::fixed << std::setprecision(2) << "\n-> " << monto << " " << MonedaLocal << " equivalen a " << resultado << " USD.\n";
+‎        break;
+‎
+‎    case 2: // USD a Bolivares
+‎        monto = solicitarDouble("Introduce el monto en USD: ");
+‎        resultado = monto * tasas.usdToLocal;
+‎        std::cout << std::fixed << std::setprecision(2) << "\n-> " << monto << " USD equivalen a " << resultado << " " << MonedaLocal << ".\n";
+‎        break;
+‎
+‎    case 3: // Bolivares a ETH
+‎        monto = solicitarDouble("Introduce el monto en " + MonedaLocal + ": ");
+‎        resultado = (monto / tasas.usdToLocal) * tasas.usdToCrypto;
+‎        std::cout << std::fixed << std::setprecision(8) << "\n-> " << monto << " " << MonedaLocal << " equivalen a " << resultado << " " << Crypto << ".\n";
+‎        break;
+‎
+‎    case 4: // ETH a Bolivares
+‎        monto = solicitarDouble("Introduce el monto en " + Crypto + ": ");
+‎        resultado = (monto / tasas.usdToCrypto) * tasas.usdToLocal;
+‎        std::cout << std::fixed << std::setprecision(2) << "\n-> " << monto << " " << Crypto << " equivalen a " << resultado << " " << MonedaLocal << ".\n";
+‎        break;
+‎
+‎    case 5: // USD a ETH
+‎        monto = solicitarDouble("Introduce el monto en USD: ");
+‎        resultado = monto * tasas.usdToCrypto;
+‎        std::cout << std::fixed << std::setprecision(8) << "\n-> " << monto << " USD equivalen a " << resultado << " " << Crypto << ".\n";
+‎        break;
+‎
+‎    case 6: // ETH a USD
+‎        monto = solicitarDouble("Introduce el monto en " + Crypto + ": ");
+‎        resultado = monto / tasas.usdToCrypto;
+‎        std::cout << std::fixed << std::setprecision(2) << "\n-> " << monto << " " << Crypto << " equivalen a " << resultado << " USD.\n";
+‎        break;
+‎
+‎    default:
+‎        std::cout << "[!] ERROR!! Opcion Invalida.\n";
+‎        break;
+‎    }
+‎}
+‎
 ‎
