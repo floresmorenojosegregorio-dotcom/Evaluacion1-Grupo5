@@ -18,3 +18,12 @@
 ‎    double usdToLocal;
 ‎    double usdToCrypto;
 ‎};
+
+// Función para limpiar la pantalla según el sistema operativo
+‎void limpiarPantalla() {
+‎#if defined(_WIN32) || defined(_WIN64)
+‎    std::system("cls");
+‎#else
+‎    std::system("clear");
+‎#endif
+‎}
