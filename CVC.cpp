@@ -27,3 +27,11 @@
 ‎    std::system("clear");
 ‎#endif
 ‎}
+
+‎// Función para pausar la ejecución hasta que se presione una tecla
+‎void esperarTecla() {
+‎    std::cout << "\nPresione ENTER para continuar y volver al menu...";
+‎    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+‎    std::cin.get(); // Espera la pulsación de la tecla
+‎}
+‎
