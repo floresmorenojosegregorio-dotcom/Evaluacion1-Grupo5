@@ -124,3 +124,27 @@ int main() {
 ‎    std::cout << "      CONVERSOR DE DIVISAS Y CRIPTOACTIVOS        \n";
 ‎    std::cout << "                     C.D.C                        \n";
 ‎    std::cout << "==================================================\n";
+
+  //Fase 1: Inicializacion de Tasas de Cambio 
+‎    int config=0;
+‎    double precioCryptoEnUsd;
+‎    //Bucle de configuracion inicial
+‎    while(true){
+‎
+‎    //Limpia la pantalla al inicio del bucle
+‎    limpiarPantalla();
+‎
+‎    std::cout << "\n------ CONFIGURACION INICIAL ------\n";
+‎
+‎    std::cout << "\n------Seleccione el metodo de recopilacion de los activos------\n";
+‎    std::cout << "1) Obtener valores por internet\n";
+‎    std::cout << "2) Ingresar valores manualmente\n";
+‎    std::cout << "3) Salir del programa\n";
+‎    std::cout << "Seleccione una opcion: ";
+‎
+‎    if (!(std::cin >> config)) {
+‎        std::cout << "[!] ERROR!! Por favor, introduzca un numero valido.\n";
+‎        std::cin.clear();
+‎        esperarTecla();
+‎        continue;
+‎    }
