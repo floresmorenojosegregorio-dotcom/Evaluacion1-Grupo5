@@ -1,30 +1,24 @@
-# =========================================
-# Contenido de un .gitignore
-# =========================================
+# Archivos de Visual Studio 
+.vs/
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
 
-# 1. Ejecutables y Archivos Compilados (Basura Binaria)
-*.o
-*.out
-*.exe
-*.dll
-
-# 2. Directorios de compilación
-build/
+# Carpetas de compilación y librerías generadas localmente
+x64/
+x86/
+vcpkg_installed/
 bin/
 obj/
+*.db
+*.opensdf
+*.sdf
 
-# 3. Archivos de Entorno y Variables Secretas (¡Seguridad!)
-.env
-*.env.local
+# Ejecutables 
+*.exe
+*.out
+*.o
 
-# 4. Logs e Historiales generados por ejecución
-*.log
-logs/
-
-# 5. Configuraciones locales del editor (VS Code)
-.vscode/
-*.code-workspace
-
-# 6. Archivos ocultos del Sistema Operativo
-Thumbs.db
+# Sistema operativo
 .DS_Store
+Thumbs.db
