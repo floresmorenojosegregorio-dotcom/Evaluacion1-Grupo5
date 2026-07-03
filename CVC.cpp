@@ -100,3 +100,19 @@
 ‎}
 ‎
 ‎
+‎//Funcion para Imprimir el menu
+‎void imprimirMenu() {
+‎    std::cout << "==================================================\n";
+‎    std::cout << "              OPCIONES DISPONIBLES                \n";
+‎    std::cout << "==================================================\n";
+‎    std::cout << "1. Convertir Bolivares (VES) --> USD\n";
+‎    std::cout << "2. Convertir Dolares (USD)   --> VES\n";
+‎    std::cout << "3. Convertir Bolivares (VES) --> ETH\n";
+‎    std::cout << "4. Convertir ETHEREUM (ETH)  --> VES\n";
+‎    std::cout << "5. Convertir Dolares (USD)   --> ETH\n";
+‎    std::cout << "6. Convertir ETHEREUM (ETH)  --> USD\n";
+‎    std::cout << "7. Salir del programa\n";
+‎    std::cout << "--------------------------------------------------\n";
+‎    std::cout << "Seleccione una opcion (1-7): ";
+‎}
+‎
