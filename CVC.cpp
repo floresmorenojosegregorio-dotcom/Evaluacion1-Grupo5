@@ -205,3 +205,16 @@ else if(config==2){
 ‎        tasas.usdToCrypto = 1.0 / precioCryptoEnUsd;
 ‎        break;
 ‎    }
+
+‎    else if (config== 3) {
+‎        std::cout<<"Saliendo del programa\n";
+‎        return 0;
+‎    }
+‎
+‎    else {
+‎        std::cout << "[!] ERROR!! Opcion Invalida. Reintente de nuevo.\n";
+‎        esperarTecla();
+‎    }
+‎
+
+‎}
