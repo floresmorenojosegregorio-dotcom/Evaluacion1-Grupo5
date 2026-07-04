@@ -198,3 +198,10 @@ else if (config == 1) {
 ‎    esperarTecla();
 ‎    break;}
 
+else if(config==2){
+‎        //Ingreso de datos de manera manual
+‎        tasas.usdToLocal = solicitarDouble("Ingrese el Valor de 1 USD en Bolivares: ");
+‎        precioCryptoEnUsd = solicitarDouble("Ingrese el Valor de 1 ETH en USD: ");
+‎        tasas.usdToCrypto = 1.0 / precioCryptoEnUsd;
+‎        break;
+‎    }
