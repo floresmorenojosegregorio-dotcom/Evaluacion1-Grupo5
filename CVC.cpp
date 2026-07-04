@@ -218,3 +218,36 @@ else if(config==2){
 ‎
 
 ‎}
+
+
+‎    int opcionMenu = 0;
+‎    //Bucle principal 
+‎    do {
+	‎        limpiarPantalla(); // Limpia el buffer visual 
+	‎        // Fase 2: Menu de opciones Principal
+		‎        imprimirMenu();
+	‎
+		‎        // Fase 3: Procesamiento de transacciones
+		‎        if (!(std::cin >> opcionMenu)) {
+		‎            std::cout << "[!] ERROR!! Por favor, introduzca un numero valido.\n";
+		‎            std::cin.clear();
+		‎            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		‎            esperarTecla();
+		‎            continue;
+		‎       
+	}
+	‎
+		‎        if (opcionMenu >= 1 && opcionMenu <= 6) {
+		‎            std::cout << "\n";
+		‎            procesarConversion(opcionMenu, tasas, "VES", "ETH");
+		‎            esperarTecla(); // Pausa después de mostrar el resultado
+		‎       
+	}
+	‎        else if (opcionMenu != 7) {
+		‎            std::cout << "[!] ERROR!! Opcion Invalida. Reintente de nuevo.\n";
+		‎            esperarTecla();
+		‎       
+	}
+	‎
+		‎   
+} while (opcionMenu != 7);
