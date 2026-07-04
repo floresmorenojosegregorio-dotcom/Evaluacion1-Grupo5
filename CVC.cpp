@@ -148,3 +148,53 @@ int main() {
 ‎        esperarTecla();
 ‎        continue;
 ‎    }
+
+else if (config == 1) {
+‎        //Creamos los punteros de tipo json_object que se usaran para extraer las tasas
+‎        json_object* json;
+‎        json_object* valor;
+‎        //Ingresamos el URL de la API que tiene acceso al dolar oficial (BCV) 
+‎        std::string url="https://ve.dolarapi.com/v1/dolares/oficial";
+‎        //Variable que almacenara la respuesta web
+‎        cpr::Response respuesta;
+‎        std::cout << "Extrayendo valores de internet...";
+‎//Bucle for que extrae los valores
+‎
+‎for(int i=0; i<2; i++){
+‎        //La funcion Get devuelve una instancia de tipo Response de la url que se almacena en la variable respuesta
+‎        respuesta= cpr::Get(cpr::Url{ url });
+‎        std::cout << "\n";
+‎        //Verifica que la respuesta haya sido exitosa
+‎        if(respuesta.status_code!=200){std::cout<<"Error al intentar extraer los valores...\n";config=0;esperarTecla();break;}
+‎        if(i==0){
+‎        //Convierte el texto en un json object
+‎        json=json_tokener_parse(respuesta.text.c_str());
+‎        //Extrae un puntero hacia el valor de la clave "promedio" que contiene el precio de dolar
+‎        valor=json_object_object_get(json,"promedio");
+‎        //Uso de la funcion json_object_get_double que convierte ese valor en un double
+‎        tasas.usdToLocal=json_object_get_double(valor);
+‎        //Se actualiza la url para que apunte hacia la api para extraer el valor del Ethereum
+‎        url = "https://api.binance.com/api/v3/ticker/price?symbol=ETHUSDT";
+‎        //Se libera la memoria de json_object antes de cada finalizar la iteracion, esto porque la funcion usa memoria dinamica, y si no se libera puede generar fugas de memoria
+‎        json_object_put(json);
+‎
+‎        }
+‎        else{
+‎            //Mismo procedimiento que en el if anterior, pero aplicado para extraer el  Ethereum
+‎            json = json_tokener_parse(respuesta.text.c_str());
+‎            //En este caso la clave ya no es "promedio" si no "price"
+‎            valor = json_object_object_get(json, "price");
+‎            precioCryptoEnUsd = json_object_get_double(valor);
+‎            tasas.usdToCrypto = 1.0 / precioCryptoEnUsd;
+‎            //Se libera la memoria de json_object antes de cada finalizar la iteracion, esto porque la funcion usa memoria dinamica, y si no se libera puede generar fugas de memoria
+‎            json_object_put(json);
+‎        }
+‎       } 
+‎    //Mensajes de notificacion al usuario
+‎    if(config==0)continue;
+‎    std::cout<<"\nValores extraidos con exito:\n\n";
+‎    std::cout<<"Dolar (Bs): "<<tasas.usdToLocal<<std::endl;
+‎    std::cout << "Ethereum (Usd): " << precioCryptoEnUsd << std::endl;
+‎    esperarTecla();
+‎    break;}
+
