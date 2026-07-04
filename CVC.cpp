@@ -251,3 +251,10 @@ else if(config==2){
 	‎
 		‎   
 } while (opcionMenu != 7);
+
+‎    //Despedida
+‎    limpiarPantalla();
+‎    std::cout << "\nEstimado Usuario, gracias por usar el C.D.C. ¡Tenga un excelente dia!\n";
+‎    return 0;
+‎}
+‎
